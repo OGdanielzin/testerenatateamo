@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+main {
+    padding: 30px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.12);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.card h2 {
+    margin: 15px 0;
+    font-size: 20px;
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.card select {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.card button {
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #333;
+}
+
+auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-buttons button:first-child {
+    background: white;
+    color: #111;
+}
+
+.auth-buttons button:last-child {
+    background: #ffcc00;
+    color: #111;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+/* CAIXA */
+
+.modal-content {
+    background: white;
+
+    width: 90%;
+    max-width: 420px;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* CAMPOS */
+
+.modal-content input {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+
+/* BOTÃO */
+
+.modal-content form button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #111;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.modal-content form button:hover {
+    background: #333;
+}
+
+
+/* FECHAR */
+
+.fechar {
+    position: absolute;
+
+    top: 10px;
+    right: 18px;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+.modal-content p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-content a {
+    color: #0066ff;
+    font-weight: bold;
+}
+
+
+/* CABEÇALHO */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 40px;
+
+    background: #111;
+    color: white;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .auth-buttons {
+        width: 100%;
+    }
+
+    .auth-buttons button {
+        flex: 1;
+    }
+}

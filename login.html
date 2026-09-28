@@ -1,0 +1,101 @@
+<form id="formLogin">
+
+    <h1>THE ANSWER STORE</h1>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="E-mail"
+        required
+    >
+
+    <input
+        type="password"
+        id="senha"
+        placeholder="Senha"
+        required
+    >
+
+    <button type="submit">
+        Entrar
+    </button>
+
+    <p>
+        Ainda não tem conta?
+        <a href="cadastro.html">
+            Criar conta
+        </a>
+    </p>
+
+</form>
+
+<script>
+document
+    .getElementById("formLogin")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const email =
+            document.getElementById("email").value;
+
+        const senha =
+            document.getElementById("senha").value;
+
+        const usuario =
+            JSON.parse(
+                localStorage.getItem("usuario")
+            );
+
+        if (!usuario) {
+            alert("Usuário não cadastrado!");
+            return;
+        }
+
+        if (
+            email === usuario.email &&
+            senha === usuario.senha
+        ) {
+
+            localStorage.setItem(
+                "logado",
+                "true"
+            );
+
+            alert("Login realizado!");
+
+            window.location.href =
+                "index.html";
+
+        } else {
+
+            alert("E-mail ou senha incorretos.");
+
+        }
+
+    });
+</script>
+
+<script>
+
+const logado = localStorage.getItem("logado");
+const nome = localStorage.getItem("nomeUsuario");
+
+if (logado === "true") {
+
+    document.getElementById("usuarioLogado").innerHTML = `
+        Olá, <strong>${nome}</strong>!
+        <button onclick="sair()">Sair</button>
+    `;
+
+}
+
+function sair() {
+
+    localStorage.removeItem("logado");
+    localStorage.removeItem("nomeUsuario");
+
+    window.location.href = "index.html";
+}
+
+</script>
