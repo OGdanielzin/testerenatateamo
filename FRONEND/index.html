@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Answer Store</title>
+
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="script.js">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div>
+        <h1>THE ANSWER STORE</h1>
+        <p>Sua loja de tênis</p>
+    </div>
+
+     <div class="auth-buttons">
+    <button onclick="abrirCadastro()">Regatas</button>
+ </div>
+ 
+    <div class="auth-buttons">
+        <button onclick="abrirLogin()">Entrar</button>
+        <button onclick="abrirCadastro()">Criar conta</button>
+        
+    </div>
+
+</header>
+
+
+<main>
+
+    <h2>Nossos produtos</h2>
+
+    <div id="produtos" class="produtos"></div>
+
+</main>
+
+
+
+<div id="loginModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="fechar" onclick="fecharLogin()">&times;</span>
+
+        <h2>Entrar</h2>
+
+        <form onsubmit="login(event)">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Seu e-mail"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginSenha"
+                placeholder="Sua senha"
+                required
+            >
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
+        <p>
+            Ainda não tem conta?
+            <a href="#" onclick="trocarParaCadastro()">
+                Criar conta
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+
+
+<div id="cadastroModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="fechar" onclick="fecharCadastro()">&times;</span>
+
+        <h2>Criar conta</h2>
+
+        <form onsubmit="cadastrar(event)">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome completo"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                required
+            >
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Senha"
+                required
+            >
+
+            <input
+                type="password"
+                id="confirmarSenha"
+                placeholder="Confirmar senha"
+                required
+            >
+
+            <button type="submit">
+                Cadastrar
+            </button>
+
+        </form>
+
+        <p>
+            Já possui uma conta?
+            <a href="#" onclick="trocarParaLogin()">
+                Fazer login
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+  <div class="produtos">
+
+        <!-- CARD 1 -->
+        <div class="card">
+
+            <img 
+                src="https://cdn-images.farfetch-contents.com/13/15/76/97/13157697_21516295_600.jpg"
+                alt="Tênis Nike"
+            >
+            <h2>Tênis Esportivo</h2>
+
+            <p>Nike</p>
+
+            <p class="preco">
+                R$ 399,90
+            </p>
+
+            <button>
+                Comprar
+            </button>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="card">
+
+            <img 
+                src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWlidYTsaPI1dRBn-ZGEpconj8yAMcm0gch1voaX7cpQ&s=10"
+                alt="Nike"
+            >
+
+            <h2>Air max 97</h2>
+
+            <p>Adidas</p>
+
+            <p class="preco">
+                R$ 399,90
+            </p>
+
+            <button>
+                Comprar
+            </button>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="card">
+
+            <img 
+                src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
+                alt="Tênis Air max 90"
+            >
+
+<h2> Air max 90</h2>
+            <p class="preco">
+                R$ 399,90
+            </p>
+
+            <button>
+                Comprar
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
+
+</body>
+</html>
